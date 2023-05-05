@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        .button{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 10px;
+            text-align: center;
+            height: 250px;
+            width: 300px;
+        }
+        .button button{
+            width: 70px;
+            height: 70px;
+            font-size: xx-large;
+        }
+        #a{
+            height: 70px;
+            width: 300px;
+            font-size: xx-large;
+        }
+        .full{
+            background-color: blanchedalmond;
+            height: 410px;
+            width: 310px;
+            margin: 100px;
+            margin-left: 500px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="full">
+        <input type="text" id="a" ><br><br>
+        <div class="button">
+            <button style="background-color: red; color: white;" onclick="val('C')">C</button>
+            <button onclick="val('/')">/</button>
+            <button onclick="val('*')">*</button>
+            <button onclick="val('Del')">Del</button>
+            <button onclick="val('9')">9</button>
+            <button onclick="val('8')">8</button>
+            <button onclick="val('7')">7</button>
+            <button onclick="val('-')">-</button>
+            <button onclick="val('6')">6</button>
+            <button onclick="val('5')">5</button>
+            <button onclick="val('4')">4</button>
+            <button onclick="val('+')">+</button>
+            <button onclick="val('3')">3</button>
+            <button onclick="val('2')">2</button>
+            <button onclick="val('1')">1</button>
+            <button style="background-color: blue; color: white;" onclick="val('=')">=</button>
+        </div>
+    </div>
+
+    <script>
+        function val(i){
+            let x=document.getElementById("a")
+                
+            switch(i){
+                case '1':
+                 x.value+=1;
+                 break;
+
+                 case "2":
+                 x.value+=2;
+                 break;
+
+                 case "3":
+                 x.value+=3;
+                 break;
+
+                 case "4":
+                 x.value+=4;
+                 break;
+
+                 case "5":
+                 x.value+=5;
+                 break;
+
+                 case "6":
+                 x.value+=6;
+                 break;
+
+                 case "7": 
+                 x.value+=7;
+                 break;
+
+                 case "8":
+                 x.value+=8;
+                 break;
+
+                 case "9":
+                 x.value+=9;
+                 break;
+
+                 case "+": 
+                 x.value+='+';
+                 break;
+
+                 case "-": 
+                 x.value+='-';
+                 break;
+
+                 case "*":
+                 x.value+='*';
+                 break;
+
+                 case "/":
+                 x.value+='/';
+                 break;
+
+                 case "C":
+                  x.value=""
+                  break;
+
+                  case "Del":
+                  x.value=x.value.slice(0,-1);
+                  break;
+
+                  case "=":
+                  try{
+                    x.value=eval(x.value)
+                  }
+                  catch{
+                    alert("Error.!")
+                  }
+
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

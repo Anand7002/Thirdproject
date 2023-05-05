@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .button{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 10px;
+            height: 400px;
+            width: 300px;
+            margin-left: 20px;
+        }
+        .button button{
+            font-size: xx-large;
+            width: 80px;
+            border-radius: 50px;
+            
+        }
+        
+        #a{
+            height: 70px;
+            width: 370px;
+            margin-top:10px ;
+            border-radius: 50px;
+            font-size: xx-large;
+        }
+
+        .full{
+            height: 530px;
+            width: 400px;
+            border: 1px solid brown;
+            text-align: center;
+            background-color: cadetblue;
+            margin-left: 400px;
+            margin-top: 60px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="full">
+        <input type="text" id="a" ><br/><br/>
+        <div class="button">
+            <button onclick="val('C')" style="background-color:bisque ;"> C</button>
+            <button onclick="val('(')">(</button>
+            <button onclick="val(')')">)</button>
+            <button onclick="val('/')">/</button>
+            <button onclick="val('9')">9</button>
+            <button onclick="val('8')">8</button>
+            <button onclick="val('7')">7</button>
+            <button onclick="val('*')">*</button>
+            <button onclick="val('6')">6</button>
+            <button onclick="val('5')">5</button>
+            <button onclick="val('4')">4</button>
+            <button onclick="val('-')">-</button>
+            <button onclick="val('3')">3</button>
+            <button onclick="val('2')">2</button>
+            <button onclick="val('1')">1</button>
+            <button onclick="val('+')">+</button>
+            <button onclick="val('.')">.</button>
+            <button onclick="val('0')">0</button>
+            <button onclick="val('DEL')" style="background-color: red; color: white;">DEL</button>
+            <button onclick="val('=')" style="background-color: blueviolet; color: white;">=</button>
+        </div>
+    </div>
+
+    <script>
+        function val(i){
+            let x=document.getElementById('a')
+
+            switch(i){
+                case'1':
+                x.value+=1;
+                break;
+
+                case'2':
+                x.value+=2;
+                break;
+
+                case'3':
+                x.value+=3;
+                break;
+
+                case'4':
+                x.value+=4;
+                break;
+
+                case'5':
+                x.value+=5;
+                break;
+
+                case'6':
+                x.value+=6;
+                break;
+
+                case'7':
+                x.value+=7;
+                break;
+
+                case'8':
+                x.value+=8;
+                break;
+
+                case'9':
+                x.value+=9;
+                break;
+
+                case'0':
+                x.value+=0;
+                break;
+
+                case'.':
+                x.value+='.' ;
+                break;
+
+                case'+':
+                x.value+='+';
+                break;
+
+                case'-':
+                x.value+='-';
+                break;
+
+                case'*':
+                x.value+='*';
+                break;
+
+                case'/':
+                x.value+='/';
+                break;
+
+
+                case'(':
+                x.value+='(';
+                break;
+
+                case')':
+                x.value+=')';
+                break;
+
+                case'%':
+                x.value=x.value/100;
+                break;
+
+                case'C':
+                x.value="";
+                break;
+
+                case'DEL':
+                x.value=x.value.slice(0,-1);
+                break;
+
+                case'=':
+                try{
+                    x.value=eval(x.value)
+                }
+                catch{
+                    alert("ERROR..." )
+                }
+
+
+            }
+        }
+    </script>
+</body>
+</html>
